@@ -30,7 +30,7 @@ should be a function. No matter what function it's given as `callback`,
 the callback will be executed and will be passed `'Makers'` as an argument.
 ```js
 const makersBiggestFan = (callback) => {
-  callback("Makers");
+  return callback("Makers");
 };
 ```
 
@@ -89,8 +89,7 @@ You can run the tests by navigating to this folder, making sure the package is i
 ### Exercise 1:
 `makersBiggestFan` executes whatever callback we give it with the string `'Makers'`.
 
-Can you write a function called `doubleCall` which executes whatever callback
-we give it twice?
+Can you write a function called `doubleCall` which executes whatever callback we give it twice?
 ```js
 // Example behaviour
 const sayHello = () => {
@@ -106,7 +105,7 @@ Can you write a function called `obnoxiousFn` that takes a callback, and announc
 // Example behaviour
 const four = obnoxiousFn(() => {
   return 2 + 2;
-}); // Should print 'EXECUTING CALLBACK!!' and return 4
+}); // Should print 'EXECUTING CALLBACK!' and return 4
 console.log(four); // Should print 4
 ```
 
