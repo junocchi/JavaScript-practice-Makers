@@ -1,3 +1,4 @@
+//W6 -1.10 Array operations
 const checkLength = (phone_num) => {
   if (phone_num.length <= 10) {
     return true;

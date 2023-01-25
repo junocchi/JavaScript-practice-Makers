@@ -1,3 +1,4 @@
+//W6 - 1.12
 class UserBase {
   constructor(names) {
     this.names = names;

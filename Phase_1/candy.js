@@ -1,23 +1,20 @@
-//W6 - 1.12
-class ShoppingBasket {
-  constructor() {
-    this.items = [];
+class Candy {
+  constructor(item, price) {
+    this.item = item;
+    this.price = price;
   } 
 
-  addItem(item) {
-    this.items.push(item);
+  getItem() {
+    return this.item;
   }
 
-  getTotalPrice() {
-    return this.items.reduce((total, item) => total + item.price, 0);
+  getPrice() {
+    return this.price;
   }
+}
 
-  getAllItems() {
-    return this.items;
-  }
-}  
+module.exports = Candy;
 
-module.exports = ShoppingBasket;
 
 //#1 on terminal, enter node and require the files:
 // const ShoppingBasket = require('./shoppingBasket');

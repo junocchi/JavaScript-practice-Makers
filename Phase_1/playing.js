@@ -31,6 +31,4 @@ const returnFour = () => {
 
 const something = returnFour(); //this is how we call the function
 
-
-
 module.exports = bye;

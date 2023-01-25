@@ -1,3 +1,4 @@
+//W6 - 1.12
 class User {
   constructor(name) {
     this.name = name;
