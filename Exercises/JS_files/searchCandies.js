@@ -1,11 +1,3 @@
-const searchCandies = (prefix, maxprice) => {
-filtrar e colocar resultado em new array
-  newarray = 
-
-};
-
-module.exports = searchCandies;
-
 const candies = [
   { name: 'Aero', price: 1.99 },
   { name: 'Skitties', price: 2.99 },
@@ -22,15 +14,45 @@ const candies = [
   { name: 'Fraise Tagada', price: 5.99 }
 ];
 
-//expected behaviour
-// searchCandies('Ma', 10);
-// [ 'Mars', 'Maltesers' ]
+//#3
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
-// searchCandies('Ma', 2); // Maltesers excluded: it's more than 2
-// [ 'Mars' ]
+const searchCandies = (prefix, givenprice) => {
+  const startwith = capitalizeFirstLetter(prefix)
+  const maxprice = candies.filter(candy => candy.price < givenprice);
+  const checkname = maxprice.filter(candy => candy.name.startsWith(startwith));
+  const result = checkname.map(candy => candy.name);
+  return result;
+};
 
-// searchCandies('S', 10); 
-// [ 'Skitties', 'Skittles', 'Starburst' ]
+console.log(searchCandies('Ma', 10));
+//output: [ 'Mars', 'Maltesers' ]
 
-// searchCandies('S', 4); 
-// [ 'Skitties', 'Skittles' ] // Starbust excluded: it's more than 4
+//#2
+// const checkName = (prefix) => {
+//   const checkname = candies.filter(candy => candy.name.startsWith(prefix));
+//   return checkname
+// };
+// console.log(checkName('Ma'));
+//output:
+//[ { name: 'Mars', price: 1.49 }, { name: 'Maltesers', price: 3.49 } ]
+
+//#1
+// const checkPrice = (givenprice) => {
+//   const maxprice = candies.filter(candy => candy.price < givenprice);
+//   return maxprice
+// };  
+// console.log(checkPrice(4));
+// output:
+// [
+//   { name: 'Aero', price: 1.99 },
+//   { name: 'Skitties', price: 2.99 },
+//   { name: 'Mars', price: 1.49 },
+//   { name: 'Maltesers', price: 3.49 },
+//   { name: 'Skittles', price: 1.49 },
+//   { name: 'Ricola', price: 1.99 }
+// ]
+
+module.exports = searchCandies;
