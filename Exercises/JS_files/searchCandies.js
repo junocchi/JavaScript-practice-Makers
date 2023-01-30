@@ -15,6 +15,7 @@ const candies = [
 ];
 
 //#3
+//make sure prefix works when given in lowercase too
 const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
@@ -27,7 +28,7 @@ const searchCandies = (prefix, givenprice) => {
   return result;
 };
 
-console.log(searchCandies('Ma', 10));
+//console.log(searchCandies('ma', 10));
 //output: [ 'Mars', 'Maltesers' ]
 
 //#2
