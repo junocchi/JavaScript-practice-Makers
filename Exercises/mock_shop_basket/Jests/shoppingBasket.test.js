@@ -12,7 +12,7 @@ describe('shoppingBasket', () => {
   });
 
 //describe('given an item and price', () => {
-  it('returns the shopping baskets items and prices', () => {
+  it('returns all items and prices', () => {
     let mockCandy = new Candy();
     mockCandy.mockImplementation(() => 'Skittle', 3.99);
     let result = new ShoppingBasket(mockCandy)
@@ -21,3 +21,5 @@ describe('shoppingBasket', () => {
 });  
 
 module.exports = ShoppingBasket.test;
+
+//TypeError: Candy.mockClear is not a function
